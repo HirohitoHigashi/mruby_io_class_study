@@ -106,6 +106,10 @@ obj.on()    # output High
 ### MicroPython
 ```
 p0.value(0)
+p0.on()
+p0.off()
+p0.low()
+p0.high()
 ```
 
 ### Arduino  
