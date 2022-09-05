@@ -6,7 +6,7 @@ mrubyとmruby/c の I/O クラス検討用
  * Ruby (gem)
  * MicroPython https://micropython-docs-ja.readthedocs.io/ja/latest/library/index.html
  * Arduino https://www.arduino.cc/reference/ http://www.musashinodenpa.com/arduino/ref/
- * Qt
+ * Qt https://doc.qt.io/qt.html
 
 機能
  * GPIO
