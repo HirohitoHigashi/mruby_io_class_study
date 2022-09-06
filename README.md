@@ -2,13 +2,15 @@
 
 mrubyとmruby/c の I/O クラス検討用
 
-調査対象プラットフォーム
+## 調査対象プラットフォーム
  * Ruby (gem)
  * MicroPython https://micropython-docs-ja.readthedocs.io/ja/latest/library/index.html
  * Arduino https://www.arduino.cc/reference/ http://www.musashinodenpa.com/arduino/ref/
  * Qt https://doc.qt.io/qt.html
+ 
+その他も適宜必要に応じて調査する。
 
-機能
+## 機能
  * GPIO
  * ADC
  * PWM
