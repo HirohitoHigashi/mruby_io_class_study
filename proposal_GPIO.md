@@ -25,7 +25,7 @@ GPIO.new( pin, modes... )
 ### 例
 ```
 # ピン番号1を出力に設定する。
-gpoi1 = GPIO.new( 1, GPIO::OUT )
+gpio1 = GPIO.new( 1, GPIO::OUT )
 
 # B1ピンを入力、内部プルアップに設定する。（PIC等）
 gpio1 = GPIO.new( "B1", GPIO::IN, GPIO::PULL_UP )
@@ -55,7 +55,7 @@ read_at( pin )
 ### 例
 ```
 GPIO.new( 1, GPIO::IN )
-v1 = GPIO.read_at( 1 )
+v1 = GPIO.read_at( 1 )          # read from pin 1.
 ```
 
 ----------------------------------------
@@ -69,7 +69,7 @@ write_at( pin )
 ### 例
 ```
 GPIO.new( 1, GPIO::OUT )
-v1 = GPIO.write_at( 1 )
+v1 = GPIO.write_at( 1, 0 )      # output zero to pin 1.
 ```
 
 --------------------------------------------------------------------------------
