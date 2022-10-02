@@ -44,9 +44,11 @@ data = spi.read( 32 )
 ----------------------------------------
 ## 指定されたデータを出力する
 ```
-write( byte1, byte2,... ) -> String
-write( data_string ) -> String
+write( *params ) -> String
 ```
+
+* params （String, Integer, Array\<Integer\>) 
+
 
 ### 例
 ```

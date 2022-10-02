@@ -15,7 +15,7 @@ I2C.new( *params )
 ### 例
 ```
 i2c = I2C.new()
-i2c = I2c.new( unit:1, frequency:400_000 )   # 400kHz
+i2c = I2C.new( unit:1, frequency:400_000 )   # 400kHz
 ```
 
 ### オプションパラメータ
@@ -34,7 +34,7 @@ read( i2c_adrs_7, read_bytes, *params ) -> String
 ```
 
 * i2c_adrs_7 アドレスのデバイスから、read_bytes バイトのデータを読み込む。
-* params にデータ（String or Integer) が指定されていれば、それを出力してからリピーテッドスタートを挟み読み込みを始める。
+* params にデータ（String, Integer, Array\<Integer\>) が指定されていれば、それを出力してからリピーテッドスタートを挟み読み込みを始める。
 * 出力の仕様は、write() を参照。
 
 ### 戻り値
@@ -44,17 +44,12 @@ read( i2c_adrs_7, read_bytes, *params ) -> String
 
 ### 例
 ```
-# 互換性のため、この形式は残したい。
-i2c.read( 0x45, 3, 0xf3, 0x2d )
-
-# 若干うざくないか？
-i2c.read( address:0x45, write_data:[0xf3, 0x2d], read_bytes:3 )
-
-# 混ぜることができると良いが、サポートするのは大変かもしれない。
-i2c.read( 0x45, 3, write_data:[0xf3, 0x2d] )
+s = i2c.read( 0x45, 3 )                 # case 1
+s = i2c.read( 0x45, 3, 0xf3, 0x2d )     # case 2
+s = i2c.read( 0x45, 3, "\xf3\x2d" )
 ```
 
-I2C Sequence
+I2C bus sequence
 ```
 (case 1) S -- adrs R A -- data_1 A -- ... -- data_n A|N -- P
 (case 2) S -- adrs W A -- param_1 A -- ... -- param_n A --
@@ -71,10 +66,6 @@ I2C Sequence
  | param | type | description |
  |-|-|-|
  | stop | boolean | 最後にストップコンディションを出すか？ |
- <!--
- | read_bytes | Integer | 読み込みバイト数 |
- | write_data | Integer \| String \| Array[Integer] | 読み込み前に書き込むデータ |
--->
 
 
 ----------------------------------------
@@ -84,6 +75,7 @@ write( i2c_adrs_7 , *params ) -> Integer
 ```
 
 * i2c_adrs_7 アドレスのデバイスに、params で指定したデータを書き込む。
+* params （String, Integer, Array\<Integer\>) 
 
 ### 戻り値
 * 書き込みできたバイト数が戻り値として返る。
@@ -92,6 +84,7 @@ write( i2c_adrs_7 , *params ) -> Integer
 ```
 i2c.write( 0x45, 0x30, 0xa2 )
 i2c.write( 0x50, 0x00, 0x80, data_string )  # useful for EEPROM
+i2c.write( 0x11, [0x30, 0xa2] )
 ```
 
 I2C Sequence
