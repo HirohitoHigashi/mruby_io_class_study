@@ -116,7 +116,7 @@ bytes_available()
   
 ### 例
 ```
-uart1.read_available()
+uart1.bytes_available()
 ```
 
 ----------------------------------------
