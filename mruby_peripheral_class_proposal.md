@@ -6,14 +6,16 @@
 
 ## License
 
-[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en")
-<a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">
-![CC BY-SA 4.0](https://komtmt.files.wordpress.com/2015/04/by-sa.png?w=150)
+この文書は、特別に指示された部分を除き、クリエイティブコモンズライセンス CC BY 4.0 に従い配布する。
+
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+<a href="https://creativecommons.org/licenses/by/4.0/">
+![CC BY 4.0](https://licensebuttons.net/l/by/4.0/88x31.png)
 </a>
 
-Copyright (C) 2022 mruby forum commitiee All rights reserved.  
-Copyright (C) 2022 Kyushu Institute of Technology All rights reserved.  
-Copyright (C) 2022 Shimane IT Open-Innovation Center All rights reserved.
+Copyright (C) 2022 mruby forum commitiee.  
+Copyright (C) 2022 Kyushu Institute of Technology.  
+Copyright (C) 2022 Shimane IT Open-Innovation Center.  
 
 
 --------------------------------------------------------------------------------
