@@ -16,7 +16,7 @@
 | param | type | description |
 |-|-|-|
 | frequency | Integer | 周波数 (デフォルト 100kHz) |
-| freq | Integer | 同上 |
+| freq | 同上 |
 | scl_pin | --- | クロックピンの指定 |
 | sda_pin | --- | データピンの指定 |
 

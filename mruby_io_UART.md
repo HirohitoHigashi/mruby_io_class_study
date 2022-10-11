@@ -20,7 +20,7 @@
 | param | type | description |
 |-|-|-|
 | baudrate | Integer | ボーレート (default 9600) |
-| baud | Integer | 同上 |
+| baud | 同上 |
 | data_bits | Integer | データビット (defult 8) |
 | stop_bits | Integer | ストップビット (default 1) |
 | parity | Const | パリティービット (default NONE) |

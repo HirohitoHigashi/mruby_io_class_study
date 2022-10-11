@@ -18,7 +18,7 @@
 | param | type | description |
 |-|-|-|
 | frequency | Integer,Float | 周波数の指定。 |
-| freq | Integer,Float | 同上 |
+| freq | 同上 |
 | duty | Integer,Float | デューティー比の指定 |
 
 使用例
