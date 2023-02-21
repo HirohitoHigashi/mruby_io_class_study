@@ -17,12 +17,9 @@
 | param | type | description |
 |-|-|-|
 | unit | --- | SPIユニットの指定 |
-| baudrate | Integer | ボーレート、周波数 (default 1MHz) |
-| baud | 同上 |
-| frequency | 同上 |
-| freq | 同上 |
+| frequency | Integer | 周波数 (default 1MHz) |
 | mode | Integer | 0 to 3 (default 0) |
-| first_bit | Constant | SPI::MSB \| SPI::LSB (default MSB) |
+| first_bit | Constant | SPI::MSB_FIRST \| SPI::LSB_FIRST (default MSB_FIRST) |
 
 使用例
 ```ruby
@@ -51,10 +48,10 @@ data = spi.read( 32 )
 ```
 
 ----------------------------------------
-### write( *outputs ) -> String
+### write( *outputs ) -> Integer
 
 * SPIバスへ、outputs で指定したデータを書き込む。
-* outputsは、Integer, Array\<Integer\> および String で指定する。
+* outputsは、Integer, Array\<Integer\> もしくは String で指定する。
 
 使用例
 ```ruby
