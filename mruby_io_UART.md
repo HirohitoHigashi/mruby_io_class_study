@@ -28,7 +28,7 @@
 | unit | --- | ユニットの指定（パラメータidと同じ） |
 | txd_pin | --- | TxDピンの指定 |
 | rxd_pin | --- | RxDピンの指定 |
-| rtx_pin | --- | RTSピンの指定 |
+| rts_pin | --- | RTSピンの指定 |
 | cts_pin | --- | CTSピンの指定 |
 
 パラメータ用定数
