@@ -7,13 +7,13 @@
 ------------------------------------------------------------
 ## コンストラクタ
 ----------------------------------------
-### GPIO.new( pin, *params )
+### GPIO.new( pin, params )
 
 * pin で示す物理ピンを指定して、GPIO オブジェクトを生成する。
-* 同時に params を指定して、入出力方向などのモードを指示する。
+* 同時に param を指定して、入出力方向などのモードを指示する。
 * pin は標準的には整数で指定するが、別な方法（例えばPICでは"B1"等）があっても良い。
 * 1ビットを基本とするが、機器によっては必要に応じて複数ビットまとめたピン指定もありうる。
-* params は、以下の定数を使って指示する。
+* param は以下の定数を使い、`|`で接続して指定する。
 * IN, OUT もしくは HIGH_Z の指示は必須とし、無き場合は ArgumentError が発生する。
 
 定数
@@ -32,7 +32,7 @@ GPIO::OPEN_DRAIN    # オープンドレインモードに設定する
 gpio1 = GPIO.new( 1, GPIO::OUT )
 
 # B1ピンを入力、内部プルアップに設定する。（PIC等）
-gpio1 = GPIO.new( "B1", GPIO::IN, GPIO::PULL_UP )
+gpio1 = GPIO.new( "B1", GPIO::IN|GPIO::PULL_UP )
 ```
 
 
@@ -130,10 +130,10 @@ gpio1.write( 1 )
 ```
 
 ----------------------------------------
-### setmode( *params )
+### setmode( param )
 
 * GPIOのモードを任意のタイミングで変更する。
-* IN,OUT もしくは HIGH_Z が指定された場合は、その他の設定(PULL_UP等)はクリアされる。
+* 既に PULL_UP 等が設定されている時に IN,OUT もしくは HIGH_Z が指定された場合は、PULL_UP 等の設定は無効化される。
 
 使用例
 ```ruby
@@ -141,5 +141,5 @@ gpio1.write( 1 )
 gpio1.setmode( GPIO::PULL_UP )
 
 # 入力に切り替え、内部プルアップを有効にする。
-gpio1.setmode( GPIO::IN, GPIO::PULL_UP )
+gpio1.setmode( GPIO::IN|GPIO::PULL_UP )
 ```
