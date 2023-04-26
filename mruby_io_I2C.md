@@ -36,30 +36,34 @@ i2c = I2C.new(1, frequency:400_000 )   # 400kHz
 ------------------------------------------------------------
 ## インスタンスメソッド
 ----------------------------------------
-### read( i2c_adrs_7, read_bytes, *outputs ) -> String
+### read( i2c_adrs_7, read_bytes, *param ) -> String
 
 * i2c_adrs_7 アドレスのデバイスから、read_bytes バイトのデータを読み込む。
-* outputs が指定されていれば、それを出力してからリピーテッドスタートを挟み読み込みを始める。
-* 出力の仕様は、write() を参照。
 * デバイスが途中で NAK を返す場合は、read_bytes より短い長さの String が返る可能性がある。
 
 オプションパラメータ
 
 | param | type | description |
 |-|-|-|
+| (data) | Integer,String,Array\<Integer\>| 先に指定されたデータを出力する |
 | stop | boolean | 最後にストップコンディションを出すか？ |
+
+* param にデータが指定されていれば、それを出力してからリピーテッドスタートを挟み読み込みを始める。
+* 出力の仕様は、write() を参照。
+
 
 使用例
 ```ruby
 s = i2c.read( 0x45, 3 )                 # case 1
 s = i2c.read( 0x45, 3, 0xf3, 0x2d )     # case 2
 s = i2c.read( 0x45, 3, "\xf3\x2d" )
+s = i2c.read( 0x45, 3, "\xf3\x2d", stop:false )
 ```
 
 I2C bus sequence
 ```
-(case 1) S -- adrs R A -- data_1 A -- ... -- data_n A|N -- P
-(case 2) S -- adrs W A -- out_1 A ... out_n A -- Sr -- adrs R A -- data_1 A -- ... data_n A|N -- P
+(case 1) S -- adrs(45) R A -- data1 A -- ... -- data3 A|N -- P
+(case 2) S -- adrs(45) W A -- out1(f3) A ... out2(2d) A -- Sr -- adrs(45) R A -- data1 A -- ... data3 A|N -- P
     S : Start condition
     P : Stop condition
     Sr: Repeated start condition
