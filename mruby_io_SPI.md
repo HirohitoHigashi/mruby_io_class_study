@@ -81,5 +81,5 @@ i2c.write( 0x02, 0xee, 0xad, 0x00, data_string )  # useful for EEPROM
 
 使用例
 ```ruby
-s = @bus.transfer( 0b0000_0101, 1 )  # s は 2バイトの String が返る
+s = spi.transfer( 0b0000_0101, 1 )  # s は 2バイトの String が返る
 ```
