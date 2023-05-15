@@ -37,6 +37,18 @@ spi = SPI.new( unit:1, frequency:10_000_000 )
 ------------------------------------------------------------
 ## インスタンスメソッド
 ----------------------------------------
+### setmode( *params )
+
+* SPI の動作モード（パラメータ）を変更する。
+* パラメータの指定は、コンストラクタに準拠する。
+
+
+使用例
+```ruby
+spi.setmode( mode:3 )
+```
+
+----------------------------------------
 ### read( read_bytes ) -> String
 
 * SPIバスから read_bytes バイトのデータを読み込む。
@@ -48,9 +60,9 @@ data = spi.read( 32 )
 ```
 
 ----------------------------------------
-### write( *outputs ) -> Integer
+### write( *outputs )
 
-* SPIバスへ、outputs で指定したデータを書き込む。
+* SPIバスへ、outputs で指定したデータを出力する。
 * outputsは、Integer, Array\<Integer\> もしくは String で指定する。
 
 使用例
@@ -58,4 +70,16 @@ data = spi.read( 32 )
 spi.write( 0x30, 0xa2 )
 spi.write( "\x30\xa2" )
 i2c.write( 0x02, 0xee, 0xad, 0x00, data_string )  # useful for EEPROM
+```
+
+----------------------------------------
+### transfer( outputs, additional_read_bytes = 0 ) -> String
+
+* SPIバスへ outputs で指定したデータを出力しながら同時に入力する（汎用転送）
+* outputs は、Integer, Array\<Integer\> もしくは String で指定する。
+* additional_read_bytes を指定すると、追加でそのバイト数の 0x00 を出力する。
+
+使用例
+```ruby
+s = @bus.transfer( 0b0000_0101, 1 )  # s は 2バイトの String が返る
 ```
