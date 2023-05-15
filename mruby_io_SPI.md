@@ -77,7 +77,7 @@ i2c.write( 0x02, 0xee, 0xad, 0x00, data_string )  # useful for EEPROM
 
 * SPIバスへ outputs で指定したデータを出力しながら同時に入力する（汎用転送）
 * outputs は、Integer, Array\<Integer\> もしくは String で指定する。
-* additional_read_bytes を指定すると、追加でそのバイト数の 0x00 を出力する。
+* additional_read_bytes を指定すると、そのバイト数分の 0x00 を output に続いて出力する。
 
 使用例
 ```ruby
