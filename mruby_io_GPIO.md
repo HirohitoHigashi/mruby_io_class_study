@@ -7,7 +7,7 @@
 ------------------------------------------------------------
 ## クラスメソッド
 ----------------------------------------
-### GPIO.setmode( pin, params )
+### GPIO.setmode( pin, params ) -> Nil
 
 * pin で示す物理ピンを指定して、GPIO のモードを変更する。
 * その他は、コンストラクタを参照。
@@ -15,7 +15,7 @@
 使用例
 ```ruby
 # ピン番号1を出力に設定する。
-GPIO.semode( 1, GPIO::OUT )
+GPIO.setmode( 1, GPIO::OUT )
 
 # B1ピンを入力、内部プルアップに設定する。（PIC等）
 GPIO.setmode( "B1", GPIO::IN|GPIO::PULL_UP )
@@ -145,7 +145,7 @@ gpio1.write( 1 )
 ```
 
 ----------------------------------------
-### setmode( param )
+### setmode( param ) -> Nil
 
 * GPIOのモードを任意のタイミングで変更する。
 * 既に PULL_UP 等が設定されている時に IN,OUT もしくは HIGH_Z が指定された場合は、PULL_UP 等の設定は無効化される。
