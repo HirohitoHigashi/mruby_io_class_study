@@ -60,7 +60,7 @@ data = spi.read( 32 )
 ```
 
 ----------------------------------------
-### write( *outputs )
+### write( *outputs ) -> Nil
 
 * SPIバスへ、outputs で指定したデータを出力する。
 * outputsは、Integer, Array\<Integer\> もしくは String で指定する。
