@@ -32,10 +32,10 @@ adc1 = ADC.new( 1 )
 v1 = adc1.read_voltage()
 ```
 
-注意  
-Floatが使用可能な状態でVMがコンパイルされている必要がある。
-(MRBC_USE_FLOATマクロ。デフォルトON)  
-使用可能でない場合は、NotImplementedError例外が発生する。
+備考
+* Floatが使用可能な状態でVMがコンパイルされている必要がある。
+(MRBC_USE_FLOATマクロ。デフォルトON)
+* 使用可能でない場合は、NotImplementedError例外が発生する。
 
 
 ----------------------------------------
