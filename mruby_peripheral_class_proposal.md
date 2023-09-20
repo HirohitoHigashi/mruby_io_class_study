@@ -1,5 +1,9 @@
 # mruby, mruby/c 共通ペリフェラルクラス仕様提案書
 
+この成果は、mruby の以下の文書へ引き継がれました。もうメンテナンスしません。
+
+https://github.com/mruby/microcontroller-peripheral-interface-guide
+
 ## Abstract
 
 この提案書は、mruby および mruby/c で GPIO 等のハードウェアペリフェラルを使う場合に共通で使う事ができる I/O API Class を規定する。
