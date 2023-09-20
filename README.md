@@ -2,6 +2,10 @@
 
 mrubyとmruby/c の I/O クラス検討用
 
+この成果は、mruby の以下の文書へ引き継がれました。もうメンテナンスしません。
+
+https://github.com/mruby/microcontroller-peripheral-interface-guide
+
 ## 現在の最新ドラフト
 
 https://github.com/HirohitoHigashi/mruby_io_class_study/blob/main/mruby_peripheral_class_proposal.md
